@@ -1,0 +1,22 @@
+{
+  "dest": "./build/ruddy.js",
+  "files": [
+    "./src/core/export.js",
+    "./src/core/window/element.js",
+    "./src/core/window/style.js",
+    "./src/core/window/html.js",
+    "./src/core/core.js",
+    "./src/globals/array.js",
+    "./src/globals/string.js",
+    "./src/globals/number.js",
+    "./src/globals/integer.js",
+    "./src/globals/float.js",
+    "./src/globals/object.js",
+    "./src/globals/function.js",
+    "./src/globals/nodes.js",
+    "./src/globals/style.js",
+    "./src/globals/document.js",
+    "./src/globals/element.js",
+    "./src/globals/ruddy.js"
+  ]
+}

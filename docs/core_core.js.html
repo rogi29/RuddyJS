@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>core/core.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-$arr.html">$arr</a><ul class='methods'><li data-type='method'><a href="module-$arr.html#~concat">concat</a></li><li data-type='method'><a href="module-$arr.html#~first">first</a></li><li data-type='method'><a href="module-$arr.html#~forEach">forEach</a></li><li data-type='method'><a href="module-$arr.html#~indexOf">indexOf</a></li><li data-type='method'><a href="module-$arr.html#~isEmpty">isEmpty</a></li><li data-type='method'><a href="module-$arr.html#~join">join</a></li><li data-type='method'><a href="module-$arr.html#~last">last</a></li><li data-type='method'><a href="module-$arr.html#~map">map</a></li><li data-type='method'><a href="module-$arr.html#~pop">pop</a></li><li data-type='method'><a href="module-$arr.html#~push">push</a></li><li data-type='method'><a href="module-$arr.html#~reduce">reduce</a></li><li data-type='method'><a href="module-$arr.html#~reverse">reverse</a></li></ul></li><li><a href="module-$css.html">$css</a><ul class='methods'><li data-type='method'><a href="module-$css.html#~deleteRule">deleteRule</a></li><li data-type='method'><a href="module-$css.html#~getCSSText">getCSSText</a></li><li data-type='method'><a href="module-$css.html#~getRule">getRule</a></li><li data-type='method'><a href="module-$css.html#~insertRule">insertRule</a></li><li data-type='method'><a href="module-$css.html#~jsonToRule">jsonToRule</a></li><li data-type='method'><a href="module-$css.html#~objToRule">objToRule</a></li><li data-type='method'><a href="module-$css.html#~ruleToJson">ruleToJson</a></li><li data-type='method'><a href="module-$css.html#~ruleToObj">ruleToObj</a></li></ul></li><li><a href="module-$doc.html">$doc</a><ul class='methods'><li data-type='method'><a href="module-$doc.html#~addEventListener">addEventListener</a></li><li data-type='method'><a href="module-$doc.html#~createStyle">createStyle</a></li><li data-type='method'><a href="module-$doc.html#~customEvent">customEvent</a></li><li data-type='method'><a href="module-$doc.html#~dispatchEvent">dispatchEvent</a></li><li data-type='method'><a href="module-$doc.html#~getComputedStyle">getComputedStyle</a></li><li data-type='method'><a href="module-$doc.html#~getStyle">getStyle</a></li><li data-type='method'><a href="module-$doc.html#~mousePosition">mousePosition</a></li><li data-type='method'><a href="module-$doc.html#~querySelector">querySelector</a></li><li data-type='method'><a href="module-$doc.html#~querySelectorAll">querySelectorAll</a></li><li data-type='method'><a href="module-$doc.html#~size">size</a></li><li data-type='method'><a href="module-$doc.html#~viewport">viewport</a></li></ul></li><li><a href="module-$el.html">$el</a><ul class='methods'><li data-type='method'><a href="module-$el.html#~addEventListener">addEventListener</a></li><li data-type='method'><a href="module-$el.html#~dispatchEvent">dispatchEvent</a></li><li data-type='method'><a href="module-$el.html#~getAttribute">getAttribute</a></li><li data-type='method'><a href="module-$el.html#~querySelector">querySelector</a></li><li data-type='method'><a href="module-$el.html#~querySelectorAll">querySelectorAll</a></li><li data-type='method'><a href="module-$el.html#~setAttribute">setAttribute</a></li></ul></li><li><a href="module-$Export.html">$Export</a><ul class='methods'><li data-type='method'><a href="module-$Export.html#~module">module</a></li></ul></li><li><a href="module-$Export_module.html">$Export/module</a><ul class='methods'><li data-type='method'><a href="module-$Export_module.html#~include">include</a></li><li data-type='method'><a href="module-$Export_module.html#~init">init</a></li></ul></li><li><a href="module-$Export_module_include.html">$Export/module/include</a><ul class='methods'><li data-type='method'><a href="module-$Export_module_include.html#~init">init</a></li></ul></li><li><a href="module-$float.html">$float</a></li><li><a href="module-$func.html">$func</a><ul class='methods'><li data-type='method'><a href="module-$func.html#~assign">assign</a></li><li data-type='method'><a href="module-$func.html#~bind">bind</a></li></ul></li><li><a href="module-$int.html">$int</a></li><li><a href="module-$nodes.html">$nodes</a><ul class='methods'><li data-type='method'><a href="module-$nodes.html#~concat">concat</a></li><li data-type='method'><a href="module-$nodes.html#~first">first</a></li><li data-type='method'><a href="module-$nodes.html#~forEach">forEach</a></li><li data-type='method'><a href="module-$nodes.html#~indexOf">indexOf</a></li><li data-type='method'><a href="module-$nodes.html#~isOne">isOne</a></li><li data-type='method'><a href="module-$nodes.html#~last">last</a></li><li data-type='method'><a href="module-$nodes.html#~map">map</a></li><li data-type='method'><a href="module-$nodes.html#~push">push</a></li></ul></li><li><a href="module-$num.html">$num</a><ul class='methods'><li data-type='method'><a href="module-$num.html#~isFloat">isFloat</a></li><li data-type='method'><a href="module-$num.html#~isInteger">isInteger</a></li></ul></li><li><a href="module-$obj.html">$obj</a><ul class='methods'><li data-type='method'><a href="module-$obj.html#~assign">assign</a></li><li data-type='method'><a href="module-$obj.html#~extend">extend</a></li><li data-type='method'><a href="module-$obj.html#~forEach">forEach</a></li><li data-type='method'><a href="module-$obj.html#~keys">keys</a></li><li data-type='method'><a href="module-$obj.html#~map">map</a></li><li data-type='method'><a href="module-$obj.html#~push">push</a></li><li data-type='method'><a href="module-$obj.html#~values">values</a></li></ul></li><li><a href="module-$r.html">$r</a><ul class='methods'><li data-type='method'><a href="module-$r.html#.attribute">attribute</a></li><li data-type='method'><a href="module-$r.html#.catch">catch</a></li><li data-type='method'><a href="module-$r.html#.createRule">createRule</a></li><li data-type='method'><a href="module-$r.html#.css">css</a></li><li data-type='method'><a href="module-$r.html#.do">do</a></li><li data-type='method'><a href="module-$r.html#.each">each</a></li><li data-type='method'><a href="module-$r.html#.find">find</a></li><li data-type='method'><a href="module-$r.html#.getTranslate">getTranslate</a></li><li data-type='method'><a href="module-$r.html#.html">html</a></li><li data-type='method'><a href="module-$r.html#.on">on</a></li><li data-type='method'><a href="module-$r.html#.or">or</a></li><li data-type='method'><a href="module-$r.html#.position">position</a></li><li data-type='method'><a href="module-$r.html#.setTranslate">setTranslate</a></li><li data-type='method'><a href="module-$r.html#.setTranslateX">setTranslateX</a></li><li data-type='method'><a href="module-$r.html#.setTranslateY">setTranslateY</a></li><li data-type='method'><a href="module-$r.html#.size">size</a></li><li data-type='method'><a href="module-$r.html#.style">style</a></li><li data-type='method'><a href="module-$r.html#.value">value</a></li><li data-type='method'><a href="module-$r.html#.when">when</a></li><li data-type='method'><a href="module-$r.html#.when">when</a></li><li data-type='method'><a href="module-$r.html#.when">when</a></li></ul></li><li><a href="module-$str.html">$str</a><ul class='methods'><li data-type='method'><a href="module-$str.html#~escapeHTML">escapeHTML</a></li><li data-type='method'><a href="module-$str.html#~isEmpty">isEmpty</a></li><li data-type='method'><a href="module-$str.html#~pregMatch">pregMatch</a></li><li data-type='method'><a href="module-$str.html#~toHTML">toHTML</a></li><li data-type='method'><a href="module-$str.html#~toLowerCase">toLowerCase</a></li><li data-type='method'><a href="module-$str.html#~toUpperCase">toUpperCase</a></li><li data-type='method'><a href="module-$str.html#~ucfirst">ucfirst</a></li></ul></li><li><a href="module-CSSStyleSheet.html">CSSStyleSheet</a></li><li><a href="module-Globals.html">Globals</a></li><li><a href="module-Ruddy.html">Ruddy</a><ul class='methods'><li data-type='method'><a href="module-Ruddy.html#~assign">assign</a></li><li data-type='method'><a href="module-Ruddy.html#~export">export</a></li><li data-type='method'><a href="module-Ruddy.html#~isArr">isArr</a></li><li data-type='method'><a href="module-Ruddy.html#~isBool">isBool</a></li><li data-type='method'><a href="module-Ruddy.html#~isDate">isDate</a></li><li data-type='method'><a href="module-Ruddy.html#~isDoc">isDoc</a></li><li data-type='method'><a href="module-Ruddy.html#~isEl">isEl</a></li><li data-type='method'><a href="module-Ruddy.html#~isEvent">isEvent</a></li><li data-type='method'><a href="module-Ruddy.html#~isFloat">isFloat</a></li><li data-type='method'><a href="module-Ruddy.html#~isFunc">isFunc</a></li><li data-type='method'><a href="module-Ruddy.html#~isInt">isInt</a></li><li data-type='method'><a href="module-Ruddy.html#~isNodes">isNodes</a></li><li data-type='method'><a href="module-Ruddy.html#~isNum">isNum</a></li><li data-type='method'><a href="module-Ruddy.html#~isObj">isObj</a></li><li data-type='method'><a href="module-Ruddy.html#~isStr">isStr</a></li></ul></li><li><a href="module-Ruddy_cache.html">Ruddy/cache</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">core/core.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * RuddyJS Globals Wrappers
+ *
+ * @package     ruddy
+ * @module      Globals
+ * @author      Gil Nimer &lt;info@ruddymonkey.com>
+ * @author      Nick Vlug &lt;info@ruddy.nl>
+ * @copyright   RuddyJS licensed under MIT. Copyright (c) 2017 Ruddy Monkey &amp; ruddy.nl
+ *
+ * @example
+ * Ruddy
+ * $obj ({});
+ * $func (function(){});
+ * $arr ([]);
+ * $str ('string');
+ * $num (11);
+ * $int (11);
+ * $float (11.35);
+ * $date (35, 21);
+ * $bool (false);
+ * $el (document.getElementById('#hello'));
+ * $nodes (document.querySelectorAll('.class'));
+ * $style (document.styleSheets[0]);
+ * $doc ();
+ * $r ('.class');
+ */
+
+var $Export = $Export || require('./export');
+
+/**
+ * @object
+ * @name Ruddy
+ * @memberof module:Globals
+ * @description Ruddy Core Object
+ */
+$Export
+    .module(
+        'Ruddy',
+        '@core',
+        './core'
+    )
+    .include([
+        'window',
+        'document',
+        'HTMLAllCollection'
+    ])
+    .init(
+        this,
+        module,
+        /** @module Ruddy */
+        function (window, document, HTMLAllCollection) {
+            var
+                /**
+                 * @inner
+                 * @memberof module:Ruddy
+                 * @description Cache
+                 * @type {{}}
+                 */
+                cache = {},
+
+                /**
+                 * @inner
+                 * @memberof module:Ruddy
+                 * @description Event List
+                 * @type {{}}
+                 */
+                events = {},
+
+                /**
+                 * Export module
+                 *
+                 * @function
+                 * @inner
+                 * @name export
+                 * @memberof module:Ruddy
+                 * @description Export modules both for NodeJS and Browser environments
+                 *
+                 * @param {String} name
+                 * @param {Function} factory
+                 * @param {Object} __global
+                 * @param {Object} __core
+                 * @param {Object} __module
+                 *
+                 * @returns {Object}
+                 */
+                exportObj = $Export.module,
+
+
+                /*
+                 * Tag names for eventlistener check
+                 *
+                 * @type {{select: string, change: string, submit: string, reset: string, error: string, load: string, abort: string, input: string}}
+                 */
+                TAGNAMES = {
+                    select:'input',change:'input',
+                    submit:'form',reset:'form',
+                    error:'img',load:'img',
+                    abort:'img',input:'input'
+                },
+
+                /**
+                 * Mozzila Polyfill
+                 *
+                 * @function
+                 * @inner
+                 * @name assign
+                 * @memberof module:Ruddy
+                 * @description Assign methods into an object
+                 * @param target
+                 *
+                 * @returns {*}
+                 */
+                assignObj = Object.prototype.assign || function(target) {
+                    'use strict';
+
+                    if (target === null)
+                        throw new TypeError('Cannot convert null or undefined to an object');
+
+                    target = Object(target);
+                    for (var index = 1; index &lt; arguments.length; index++) {
+                        var source = arguments[index];
+                        if (source != null) {
+                            for (var key in source) {
+                                if (Object.prototype.hasOwnProperty.call(source, key)) {
+                                    target[key] = source[key];
+                                }
+                            }
+                        }
+                    }
+
+                    return target;
+                },
+
+                /**
+                 * Is object type
+                 *
+                 * @function
+                 * @inner
+                 * @name isObj
+                 * @memberof module:Ruddy
+                 * @description Check if a value is an object type
+                 * @param {Object|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isObject = function(value) {
+                    return (typeof value == 'object' || typeof value == 'function');
+                },
+
+                /**
+                 * Is function type
+                 *
+                 * @function
+                 * @inner
+                 * @name isFunc
+                 * @memberof module:Ruddy
+                 * @description Check if a value is a function type
+                 * @param {Function|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isFunction = function(value) {
+                    return (typeof value == 'function');
+                },
+
+                /**
+                 * Is array type
+                 *
+                 * @function
+                 * @inner
+                 * @name isArr
+                 * @memberof module:Ruddy
+                 * @description Check if a value is an array type
+                 * @param {Array|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isArray = (Array.isArray || function(value) {
+                        return (value &amp;&amp; value.constructor === Array) || '' + value !== value &amp;&amp; {}.toString.call(value) == '[object Array]';
+                }),
+
+                /**
+                 * Is string type
+                 *
+                 * @function
+                 * @inner
+                 * @name isStr
+                 * @memberof module:Ruddy
+                 * @description Check if a value is a string type
+                 * @param {String|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isString = function(value) {
+                    return typeof value === 'string';
+                },
+
+                /**
+                 * Is number type
+                 *
+                 * @function
+                 * @inner
+                 * @name isNum
+                 * @memberof module:Ruddy
+                 * @description Check if a value is a number type
+                 * @param {Number|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isNumber = function(value) {
+                    return (typeof value == 'number');
+                },
+
+                /**
+                 * Is integer type
+                 *
+                 * @function
+                 * @inner
+                 * @name isInt
+                 * @memberof module:Ruddy
+                 * @description Check if a value is an integer type
+                 * @param {Integer|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isInt = (Number.isInteger || function(value) {
+                    return (isNumber(value) &amp;&amp; isFinite(value) &amp;&amp; Math.round(value) === value);
+                }),
+
+                /**
+                 * Is float type
+                 *
+                 * @function
+                 * @inner
+                 * @name isFloat
+                 * @memberof module:Ruddy
+                 * @description Check if a value is a float type
+                 * @param {Float|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isFloat = function(value) {
+                    return (isNumber(value) &amp;&amp; Math.round(value) !== value);
+                },
+
+                /**
+                 * Is date type
+                 *
+                 * @function
+                 * @inner
+                 * @name isDate
+                 * @memberof module:Ruddy
+                 * @description Check if a value is a date type
+                 * @param {Date|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isDate = function(value) {
+                    return Object.prototype.toString.call(value) === '[object Date]';
+                },
+
+                /**
+                 * Is boolean type
+                 *
+                 * @function
+                 * @inner
+                 * @name isBool
+                 * @memberof module:Ruddy
+                 * @description Check if a value is a bool type
+                 * @param {Boolean|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isBool = function(value) {
+                    return (typeof value === "boolean");
+                },
+
+                /**
+                 * Is nodes type
+                 *
+                 * @function
+                 * @inner
+                 * @name isNodes
+                 * @memberof module:Ruddy
+                 * @description Check if a value is a nodes list type
+                 * @param {NodeList|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isNodes = function(value) {
+                    var stringRepr = Object.prototype.toString.call(value);
+
+                    return typeof value === 'object' &amp;&amp;
+                        (/^\[object (HTMLCollection|NodeList|Object)\]$/.test(stringRepr) &amp;&amp;
+                        (typeof value.length === 'number') || (value[0] &amp;&amp; isElement(value[0]))) || (window.HTMLAllCollection &amp;&amp; value instanceof HTMLAllCollection);
+                },
+
+                /**
+                 * Is element type
+                 *
+                 * @function
+                 * @inner
+                 * @name isEl
+                 * @memberof module:Ruddy
+                 * @description Check if a value is an element type
+                 * @param {Element|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isElement = function(value) {
+                    return (value &amp;&amp; (value.nodeName || value.tagName || value.className || value.id) &amp;&amp; value != document) ? true : false;
+                },
+
+                /**
+                 * Is document type
+                 *
+                 * @function
+                 * @inner
+                 * @name isDoc
+                 * @memberof module:Ruddy
+                 * @description Check if a value is a document type
+                 * @param {Document|*} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isDoc = function(value) {
+                    return (value == document);
+                },
+
+                /**
+                 * Is event type
+                 *
+                 * @function
+                 * @inner
+                 * @name isEvent
+                 * @memberof module:Ruddy
+                 * @description Check if an event exists
+                 * @param {String} value
+                 *
+                 * @returns {Boolean}
+                 */
+                isEvent = function(value) {
+                    if (typeof document === {})
+                        return false;
+
+                    var el = document.createElement(TAGNAMES[value] || 'div'), isSupported
+
+                    value = 'on' + value;
+                    if (!(isSupported = (value in el))) {
+                        el.setAttribute(value, 'return;');
+                        isSupported = typeof el[value] == 'function';
+                    }
+                    el = null;
+                    return isSupported;
+                };
+
+            /**
+             *
+             * @type {{assign: (assign|*|Function), cache: {}, events: {}, isObj: isObject, isFunc: isFunction, isArr: Function, isEl: isElement, isStr: isString, isNum: isNumber, isInt: (*|Function), isFloat: isFloat, isDate: isDate, isBool: isBool, isNodes: isNodes, isDoc: isDoc, isEvent: isEvent}}
+             */
+            return {
+                /**
+                 * @name Ruddy/cache
+                 * @module Ruddy/cache
+                 * @type {Object}
+                 */
+                cache: cache,
+                events: events,
+                assign: assignObj,
+                export: exportObj,
+                isObj: isObject,
+                isFunc: isFunction,
+                isArr: isArray,
+                isEl: isElement,
+                isStr: isString,
+                isNum: isNumber,
+                isInt: isInt,
+                isFloat: isFloat,
+                isDate: isDate,
+                isBool: isBool,
+                isNodes: isNodes,
+                isDoc: isDoc,
+                isEvent: isEvent
+            };
+        }
+    );
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
