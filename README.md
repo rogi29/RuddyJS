@@ -30,7 +30,7 @@ var $str = ruddy.$str;
 ...
 ```
 
-## Usage (CommonJS)
+## Usage (ES6)
 
 ```js
 import ruddy from 'ruddy';
