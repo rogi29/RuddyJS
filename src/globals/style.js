@@ -84,13 +84,13 @@ $Export
                      *
                      * @returns {*}
                      */
-                    insertRule: ('CSSStyleSheet' in window) ? CSSStyleSheet.prototype.insertRule : function(rule, index) {
+                    insertRule: (CSSStyleSheet.prototype.insertRule || function(rule, index) {
                         var arr;
                         rule = rule.replace(/\s+/g, '');
                         arr = rule.split('{');
                         css.addRule(arr[0], arr[1].replace('}', ''), index);
                         return index;
-                    },
+                    }),
 
                     /**
                      * Native deleteRule function polyfill
@@ -101,9 +101,9 @@ $Export
                      * @description Native deleteRule function polyfill
                      * @param index
                      */
-                    deleteRule: ('CSSStyleSheet' in window) ? CSSStyleSheet.prototype.deleteRule : function(index) {
+                    deleteRule: (CSSStyleSheet.prototype.deleteRule || function(index) {
                         return css.removeRule(index);
-                    },
+                    }),
 
                     /**
                      *

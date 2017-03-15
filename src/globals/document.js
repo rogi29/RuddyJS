@@ -163,9 +163,9 @@ $Export
                      *
                      * @returns {*}
                      */
-                    addEventListener: document.addEventListener || function(eventNameWithoutOn, callback) {
+                    addEventListener: (document.addEventListener || function(eventNameWithoutOn, callback) {
                         return doc.attachEvent('on' + eventNameWithoutOn, callback);
-                    },
+                    }),
 
                     /**
                      * Native dispatchEvent function polyfill
@@ -178,9 +178,9 @@ $Export
                      *
                      * @returns {*}
                      */
-                    dispatchEvent: ('Element' in window) ? Element.prototype.dispatchEvent : function (eventObject) {
+                    dispatchEvent: (Element.prototype.dispatchEvent || function (eventObject) {
                         return doc.fireEvent("on" + eventObject.type, eventObject);
-                    },
+                    }),
 
                     /**
                      * Creates custom event

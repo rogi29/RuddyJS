@@ -1,0 +1,227 @@
+[
+  {
+    "guid": "2053c555-e68b-4336-9e33-f7661ece8119", 
+    "index": 0, 
+    "favoriteFruit": "strawberry", 
+    "latitude": -19.77514, 
+    "company": "MAGMINA", 
+    "email": "levinekerr@magmina.com", 
+    "picture": "http://placehold.it/32x32", 
+    "tags": [
+      "laboris", 
+      "elit", 
+      "occaecat", 
+      "fugiat", 
+      "laborum", 
+      "in", 
+      "anim"
+    ], 
+    "registered": "2015-04-22T07:02:59 -03:00", 
+    "eyeColor": "blue", 
+    "phone": "+1 (918) 590-2667", 
+    "address": "642 Everit Street, Orovada, North Carolina, 3233", 
+    "friends": [
+      {
+        "id": 0, 
+        "name": "Charlene Harrison"
+      }, 
+      {
+        "id": 1, 
+        "name": "Mendez Hansen"
+      }, 
+      {
+        "id": 2, 
+        "name": "Lester Cruz"
+      }
+    ], 
+    "isActive": true, 
+    "about": "Do veniam enim sint aute id incididunt fugiat tempor cupidatat ea non. Ex mollit nostrud proident enim exercitation occaecat excepteur velit et officia. Qui officia est et nostrud culpa amet in laboris non anim eu velit duis. Officia magna pariatur nostrud in ipsum elit do do cillum eu. Officia eiusmod sunt voluptate nostrud ut commodo fugiat nisi enim id non. Veniam nisi ullamco officia do labore culpa do ea laborum ipsum sunt aliqua do voluptate. Enim eu incididunt cupidatat qui Lorem sunt irure deserunt laborum id ex.\r\n", 
+    "balance": "$3,491.45", 
+    "name": "Levine Kerr", 
+    "gender": "male", 
+    "age": 23, 
+    "greeting": "Hello, Levine Kerr! You have 8 unread messages.", 
+    "longitude": 127.25794500000001, 
+    "_id": "57d80f068dcffd6725fa4b41"
+  }, 
+  {
+    "guid": "19e15fc0-9fd7-4b70-8ff6-786c92201ce7", 
+    "index": 1, 
+    "favoriteFruit": "strawberry", 
+    "latitude": -6.6713319999999996, 
+    "company": "JETSILK", 
+    "email": "reynoldsbradford@jetsilk.com", 
+    "picture": "http://placehold.it/32x32", 
+    "tags": [
+      "sint", 
+      "eiusmod", 
+      "ex", 
+      "non", 
+      "cillum", 
+      "cupidatat", 
+      "laborum"
+    ], 
+    "registered": "2014-11-05T09:23:57 -02:00", 
+    "eyeColor": "green", 
+    "phone": "+1 (975) 550-2818", 
+    "address": "440 Ferry Place, Avoca, Michigan, 7681", 
+    "friends": [
+      {
+        "id": 0, 
+        "name": "Rhodes Meadows"
+      }, 
+      {
+        "id": 1, 
+        "name": "Jordan Watson"
+      }, 
+      {
+        "id": 2, 
+        "name": "Gilmore Marks"
+      }
+    ], 
+    "isActive": false, 
+    "about": "Aliqua excepteur fugiat veniam sint Lorem id fugiat do aute incididunt aliquip enim sint. Ea duis aliqua pariatur adipisicing est elit. Dolor ipsum magna in anim. Adipisicing est veniam proident ullamco. Ex voluptate ex irure sit deserunt veniam aute nulla culpa. Et voluptate sunt in ullamco tempor velit. Id occaecat cillum ullamco non ullamco dolor cupidatat dolore elit proident occaecat pariatur exercitation dolore.\r\n", 
+    "balance": "$1,950.21", 
+    "name": "Reynolds Bradford", 
+    "gender": "male", 
+    "age": 29, 
+    "greeting": "Hello, Reynolds Bradford! You have 3 unread messages.", 
+    "longitude": -12.9741, 
+    "_id": "57d80f06469943e4644de800"
+  }, 
+  {
+    "guid": "8680cd74-5815-46ae-b4ff-27bbc15615e3", 
+    "index": 2, 
+    "favoriteFruit": "strawberry", 
+    "latitude": 73.240869000000004, 
+    "company": "EXOTERIC", 
+    "email": "suttonlee@exoteric.com", 
+    "picture": "http://placehold.it/32x32", 
+    "tags": [
+      "ut", 
+      "reprehenderit", 
+      "incididunt", 
+      "amet", 
+      "quis", 
+      "laborum", 
+      "aliqua"
+    ], 
+    "registered": "2015-03-18T05:24:57 -02:00", 
+    "eyeColor": "blue", 
+    "phone": "+1 (944) 594-2829", 
+    "address": "851 Hampton Avenue, Charco, Georgia, 9084", 
+    "friends": [
+      {
+        "id": 0, 
+        "name": "Farley Hill"
+      }, 
+      {
+        "id": 1, 
+        "name": "Maxine Richmond"
+      }, 
+      {
+        "id": 2, 
+        "name": "Deleon Sloan"
+      }
+    ], 
+    "isActive": false, 
+    "about": "Occaecat nisi elit dolore consectetur. Labore mollit deserunt do labore non aliquip. Consectetur enim mollit do commodo sunt exercitation. Dolore dolore labore aute nulla deserunt ipsum ea nisi labore eu culpa voluptate. Culpa laboris ad laborum ea laboris nisi aute. Consectetur mollit eiusmod sint labore.\r\n", 
+    "balance": "$1,482.87", 
+    "name": "Sutton Lee", 
+    "gender": "male", 
+    "age": 27, 
+    "greeting": "Hello, Sutton Lee! You have 4 unread messages.", 
+    "longitude": -146.650203, 
+    "_id": "57d80f066ac7c16b4d87cbdf"
+  }, 
+  {
+    "guid": "6a9e5d84-c8b2-4a11-85a5-38ac75741f19", 
+    "index": 3, 
+    "favoriteFruit": "strawberry", 
+    "latitude": -30.137256000000001, 
+    "company": "HAIRPORT", 
+    "email": "starksanchez@hairport.com", 
+    "picture": "http://placehold.it/32x32", 
+    "tags": [
+      "fugiat", 
+      "cupidatat", 
+      "magna", 
+      "do", 
+      "pariatur", 
+      "officia", 
+      "aute"
+    ], 
+    "registered": "2015-03-21T10:19:10 -02:00", 
+    "eyeColor": "green", 
+    "phone": "+1 (877) 407-2872", 
+    "address": "581 Highland Place, Dante, Oklahoma, 3312", 
+    "friends": [
+      {
+        "id": 0, 
+        "name": "Rosario Mcconnell"
+      }, 
+      {
+        "id": 1, 
+        "name": "Mcclain Roberts"
+      }, 
+      {
+        "id": 2, 
+        "name": "Eloise Suarez"
+      }
+    ], 
+    "isActive": false, 
+    "about": "Deserunt incididunt veniam aute sint. Ut esse velit culpa ex fugiat dolor labore culpa laborum est proident excepteur voluptate proident. Cupidatat ex adipisicing duis ex. Amet aliqua ea et consequat laboris reprehenderit proident exercitation veniam.\r\n", 
+    "balance": "$2,113.18", 
+    "name": "Stark Sanchez", 
+    "gender": "male", 
+    "age": 22, 
+    "greeting": "Hello, Stark Sanchez! You have 4 unread messages.", 
+    "longitude": -57.950073000000003, 
+    "_id": "57d80f067b38896b0982e1c7"
+  }, 
+  {
+    "guid": "62593d83-d861-43f0-92b5-3d38a02fc315", 
+    "index": 4, 
+    "favoriteFruit": "strawberry", 
+    "latitude": 31.900182000000001, 
+    "company": "NORALI", 
+    "email": "staffordbell@norali.com", 
+    "picture": "http://placehold.it/32x32", 
+    "tags": [
+      "do", 
+      "proident", 
+      "excepteur", 
+      "ex", 
+      "enim", 
+      "esse", 
+      "minim"
+    ], 
+    "registered": "2016-08-26T06:40:04 -03:00", 
+    "eyeColor": "green", 
+    "phone": "+1 (888) 553-3935", 
+    "address": "217 Hoyt Street, Berwind, Northern Mariana Islands, 1865", 
+    "friends": [
+      {
+        "id": 0, 
+        "name": "Laura Mills"
+      }, 
+      {
+        "id": 1, 
+        "name": "Kristen Henry"
+      }, 
+      {
+        "id": 2, 
+        "name": "Curtis Gilmore"
+      }
+    ], 
+    "isActive": true, 
+    "about": "Enim laborum proident anim et eiusmod fugiat ex deserunt ipsum quis consectetur quis. Laborum laborum minim laboris adipisicing incididunt culpa dolor exercitation eiusmod. Ea adipisicing pariatur aute ullamco velit irure dolor aliquip.\r\n", 
+    "balance": "$3,820.01", 
+    "name": "Stafford Bell", 
+    "gender": "male", 
+    "age": 40, 
+    "greeting": "Hello, Stafford Bell! You have 2 unread messages.", 
+    "longitude": -8.8361520000000002, 
+    "_id": "57d80f0602711505ac14fa05"
+  }
+]

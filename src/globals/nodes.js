@@ -175,21 +175,17 @@ $Export
                     },
 
                     /**
-                     * Check if nodeList length is one
+                     * Checks if a node list is empty
                      *
                      * @function
                      * @inner
                      * @memberof module:$nodes
-                     * @description Check if nodeList length is one
+                     * @description Checks if a node list is empty
                      *
                      * @returns {boolean}
                      */
-                    isOne: function() {
-                        "use strict";
-                        if(nodes.length == 0)
-                            throw new TypeError('Cant retrieve last element of an empty nodeList with no initial value');
-
-                        return (nodes.length == 1);
+                    isEmpty: function() {
+                        return (nodes.length == 0);
                     },
 
                     /**

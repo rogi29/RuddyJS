@@ -1,5 +1,5 @@
 {
-  "dest": "./build/ruddy.js",
+  "dest": "./ruddy-bower/ruddy.js",
   "files": [
     "./src/core/export.js",
     "./src/core/window/element.js",

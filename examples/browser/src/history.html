@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>History</title>
+</head>
+<body>
+
+<div>
+    <button id="push">PUSH</button>
+    <div id="data" style="opacity: 0; transition: opacity 0.5s;"></div>
+</div>
+
+<script src="../../build/ruddy.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>
+<script id="code">
+    $r ('#push').on('click', function (e, t) {
+        Ruddy
+            .get('assets/persons.json', function(req, res) {
+                $r ({url: 'json.html'}).pushState('JSON');
+                $r ('#data').html('<pre>' + res + '</pre>').inner();
+                $r ('#data').style('opacity', 1);
+            })
+            .then(function (req, res) {
+                console.log('JSON Loaded! URL:', req.responseURL);
+            })
+            .catch(function(req, res) {
+                console.log(res);
+            });
+
+        e.preventDefault();
+    });
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RuddyJS v0.2</title>
+    <title>RuddyJS v0.0.3 - Examples - Browser Environment</title>
     <style>
         #example-wrapper {
             display: flex;
@@ -72,6 +72,8 @@
             overflow: auto;
             overflow: hidden;
         }
+
+        iframe#frame {width: 100%;height: 100%;border: none;margin: 0;padding: 0;}
     </style>
 </head>
 <div id="headers">
@@ -81,24 +83,14 @@
 </div>
 <div id="example-wrapper">
     <div id="example-code">
-        <div id="rect" style="width: 100px; height: 100px; background: #777; margin: 4px 8px;"></div>
+        <iframe id="frame" src="src/index.html">
+        </iframe>
     </div>
     <div id="script-code"></div>
     <div id="console-code"></div>
 </div>
 
-<script src="../core/export.js"></script>
-<script src="../core/core.js"></script>
-<script src="../globals/object.js"></script>
-<script src="../globals/function.js"></script>
-<script src="../globals/array.js"></script>
-<script src="../globals/string.js"></script>
-<script src="../globals/nodes.js"></script>
-<script src="../globals/style.js"></script>
-<script src="../globals/document.js"></script>
-<script src="../globals/element.js"></script>
-<script src="../globals/ruddy.js"></script>
-<script src="../extentions/animation.js"></script>
+<script src="../../build/ruddy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
 <script>
     var log = console.log;
@@ -117,28 +109,51 @@
 
 </script>
 <script>
-    var html = $r ('#code').html(),
-        map = {},
-        key = function(e){
-            map[e.keyCode] = e.type == 'keydown';
-        };
+    function iframeRef( frameRef ) {
+        return  frameRef.contentWindow ?
+                frameRef.contentWindow.document :
+                frameRef.contentDocument
+    }
 
-    $r ('#script-code').html(html).inner();
+    var frame = $r ('#frame').el;
+    frame.src = ($str (location.href).pregMatch('#')) ? location.href.replace('#', 'src/') : 'src/index.html';
 
-    var editor = ace.edit("script-code");
-    editor.setTheme("ace/theme/chrome");
-    editor.getSession().setMode("ace/mode/javascript");
+    $r ('.link').each(function(el){
+        $r (el).on('click', function(e, t) {
+            var frame = $r ('#frame').el;
+            var link = $str (t.href).replace(location.href.split('#')[0], 'src/').replace('#', '');
 
-    $r('#script-code').on('keydown', function(e, t) {
-        key(e);
-
-        if(map[17] && map[82]) {
-            e.preventDefault();
-            eval(editor.getValue());
-        }
+            document.title = 'RuddyJS - ' + $str (link.replace('src/', '').split('.')[0]).ucfirst();
+            frame.src = link;
+            return;
+        });
     });
 
-    $r('#script-code').on('keyup', key);
+    $r ('#frame').on('load', function(){
+        var frame = iframeRef($r ('#frame').el),
+            html = $str(frame.getElementById('code').innerHTML).escapeHTML(),
+            map = {},
+            key = function(e){
+                map[e.keyCode] = e.type == 'keydown';
+            };
+
+        $r ('#script-code').html(html).inner();
+
+        var editor = ace.edit("script-code");
+        editor.setTheme("ace/theme/chrome");
+        editor.getSession().setMode("ace/mode/javascript");
+
+        $r('#script-code').on('keydown', function(e, t) {
+            key(e);
+
+            if(map[17] && map[82]) {
+                e.preventDefault();
+                eval(editor.getValue());
+            }
+        });
+
+        $r('#script-code').on('keyup', key);
+    });
 </script>
 </body>
 </html>

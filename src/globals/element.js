@@ -63,18 +63,17 @@ $Export
                      *
                      * @returns {Array}
                      */
-                    querySelectorAll: ('Element' in window) ? Element.prototype.querySelectorAll :
-                        (function(selector) {
-                            var nodes = el.childNodes, list = [], i, l = 0;
-                            for(i = 0; i < nodes.length; i++) {
-                                if ($nodes ($doc (document).querySelectorAll(selector)).indexOf(nodes[i]) !== -1) {
-                                    list[l] = nodes[i];
-                                    l++;
-                                }
+                    querySelectorAll: (Element.prototype.querySelectorAll || function (selector) {
+                        var nodes = el.childNodes, list = [], i, l = 0;
+                        for(i = 0; i < nodes.length; i++) {
+                            if ($nodes ($doc (document).querySelectorAll(selector)).indexOf(nodes[i]) !== -1) {
+                                list[l] = nodes[i];
+                                l++;
                             }
+                        }
 
-                            return list;
-                        }),
+                        return list;
+                    }),
                     /**
                      * Native querySelector function polyfill
                      *
@@ -86,11 +85,10 @@ $Export
                      *
                      * @returns {null}
                      */
-                    querySelector: ('Element' in window) ? Element.prototype.querySelector : function(selectors)
-                    {
+                    querySelector: (Element.prototype.querySelector || function (selectors) {
                         var elements = $el (el).querySelectorAll(selectors);
                         return (elements.length) ? elements[0] : null;
-                    },
+                    }),
 
                     /**
                      * Native addEventListener function polyfill
@@ -103,10 +101,9 @@ $Export
                      *
                      * @param callback
                      */
-                    addEventListener: ('Element' in window) ? Element.prototype.addEventListener : function(eventNameWithoutOn, callback)
-                    {
+                    addEventListener: (Element.prototype.addEventListener || function (eventNameWithoutOn, callback) {
                         return el.attachEvent('on' + eventNameWithoutOn, callback);
-                    },
+                    }),
 
                     /**
                      * Native dispatchEvent function polyfill
@@ -117,9 +114,9 @@ $Export
                      * @description Native dispatchEvent function polyfill
                      * @param eventObject
                      */
-                    dispatchEvent: ('Element' in window) ? Element.prototype.dispatchEvent : function (eventObject) {
+                    dispatchEvent: (Element.prototype.dispatchEvent || function (eventObject) {
                         return el.fireEvent("on" + eventObject.type, eventObject);
-                    },
+                    }),
 
                     /**
                      * Native getAttribute function polyfill
@@ -132,7 +129,7 @@ $Export
                      *
                      * @returns {*}
                      */
-                    getAttribute: ('Element' in window) ? Element.prototype.getAttribute : function(attributeName) {
+                    getAttribute: (Element.prototype.getAttribute || function (attributeName) {
                         var attrs = el.attributes, i;
 
                         for(i = attrs.length; i--;){
@@ -142,7 +139,7 @@ $Export
                         }
 
                         return null;
-                    },
+                    }),
 
                     /**
                      * Native setAttribute function polyfill
@@ -155,7 +152,7 @@ $Export
                      * @param name
                      * @param value
                      */
-                    setAttribute: ('Element' in window) ? Element.prototype.setAttribute : function(name, value) {
+                    setAttribute: (Element.prototype.setAttribute || function (name, value) {
                         var attrs = el.attributes, i;
 
                         for(i = attrs.length; i--;){
@@ -167,7 +164,7 @@ $Export
 
                         attrs[attrs.length] = {};
                         attrs[attrs.length][name] = {}
-                    }
+                    })
                 };
 
                 return __core.assign(el, prototype);

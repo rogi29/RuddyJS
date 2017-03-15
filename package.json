@@ -5,7 +5,7 @@
   "main": "src/ruddy.js",
   "scripts": {
     "bundle": "node bundle.js",
-    "minify": "uglifyjs ./build/ruddy.js -o ./build/ruddy.min.js",
+    "minify": "uglifyjs ./build/ruddy.js -o ./ruddy-bower/ruddy.min.js",
     "doc": "jsdoc -c jsdoc.json",
     "test": "./node_modules/.bin/jasmine-node ./test"
   },
