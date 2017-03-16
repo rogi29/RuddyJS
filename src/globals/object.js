@@ -42,11 +42,32 @@ $Export
                 if(__core.isObj(obj) === false)
                     throw new TypeError("Object type - argument provided is not an object type");
 
-                /**
-                 *
-                 * @type {{keys: keys, values: values, push: push, map: map, forEach: forEach, assign: assign, extend: extend}}
-                 */
                 var prototype = {
+                    hasOwnProperty: function(k) {
+                        return Object.hasOwnProperty(this, k) && !Object.hasOwnProperty(prototype, k);
+                    },
+
+                    /**
+                     * Checks if an object is empty
+                     *
+                     * @function
+                     * @inner
+                     * @memberof module:$nodes
+                     * @description Checks if an object is empty
+                     *
+                     * @returns {boolean}
+                     */
+                    isEmpty: function() {
+                        var k;
+
+                        for(k in obj) {
+                            if(prototype.hasOwnProperty.call(obj, k))
+                                return false;
+                        }
+
+                        return true;
+                    },
+
                     /**
                      * Get all keys of an object
                      *
@@ -61,8 +82,11 @@ $Export
                         "use strict";
                         var k, r = [], i = 0;
 
+                        if(obj.isEmpty())
+                            return [];
+
                         for(k in obj) {
-                            if(!prototype[k]){
+                            if(!prototype.hasOwnProperty.call(obj, k)){
                                 r[i] = k;
                                 i++;
                             }
@@ -85,8 +109,11 @@ $Export
                         "use strict";
                         var k, r = [], i = 0;
 
+                        if(obj.isEmpty())
+                            return [];
+
                         for(k in obj) {
-                            if(!prototype[k]){
+                            if(!prototype.hasOwnProperty.call(obj, k)){
                                 r[i] = obj[k];
                                 i++;
                             }

@@ -1,0 +1,109 @@
+
+body {
+    overflow: hidden;
+}
+
+#examples a {
+    margin-right: 10px;
+    font-family: Arial;
+    font-weight: bold;
+    color: rgb(41, 124, 178);
+    text-decoration: none;
+}
+
+#headers {
+    display: flex;
+    position: absolute;
+    width: 94%;
+    height: 16px;
+    left: 0;
+    right: 0;
+    margin: 8px auto;
+    border: 1px solid #cfcfcf;
+}
+
+#headers h3 {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    height: 16px;
+    font-family: Arial;
+    color: rgb(41, 124, 178);
+    background: rgb(235, 235, 235);
+    border-bottom: 1px solid #cfcfcf;
+    font-size: 11pt;
+}
+
+#header-example {
+    position: relative;
+    width: 40%;
+    overflow: visible;
+    border-right: 1px solid #cfcfcf;
+}
+
+#header-script {
+    width: 35%;
+    border-right: 1px solid #cfcfcf;
+    overflow: visible;
+}
+
+#header-console {
+    width: 25%;
+    overflow: visible;
+}
+
+#example-wrapper {
+    display: flex;
+    position: absolute;
+    width: 94%;
+    height: 90%;
+    left: 0;
+    right: 0;
+    margin: 25px auto;
+    border: 1px solid #cfcfcf;
+}
+
+#example-code {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    overflow: visible;
+    border-right: 1px solid #cfcfcf;
+}
+
+#example-code .inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    overflow-y: scroll;
+}
+
+#script-code {
+    position: relative;
+    width: 35%;
+    height: 100%;
+    overflow: visible;
+    border-right: 1px solid #cfcfcf;
+}
+
+#script-code .inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#console-code {
+    width: 25%;
+    height: 100%;
+    list-style: square;
+    font-size: 9pt;
+    font-family: "Lucida Console";
+}
+
+iframe#frame {width: 100%;height: 100%;border: none;margin: 0;padding: 0;}

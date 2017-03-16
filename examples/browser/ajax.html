@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RuddyJS v0.0.3 - Examples - Ajax Extension</title>
+    <link type="text/css" rel="stylesheet" href="styles/stylesheet.css" />
+</head>
+<body>
+<div id="examples">
+    <a href="https://ruddy.nl/ruddyjs" class="link">Return</a>
+    <a href="index.html" class="link">Example</a>
+    <a href="globals.html" class="link">Globals</a>
+    <a href="animation.html" class="link">Animation</a>
+    <a href="scroll.html" class="link">scroll</a>
+    <a href="ajax.html" class="link">Ajax</a>
+</div>
+<div id="headers">
+    <h3 id="header-example">Output</h3>
+    <h3 id="header-script">Code</h3>
+    <h3 id="header-console">Console</h3>
+</div>
+<div id="example-wrapper">
+    <div id="example-code">
+        <div class="inner">
+            <button id="push">PUSH</button>
+            <div id="data" style="opacity: 0; transition: opacity 0.5s;"></div>
+        </div>
+    </div>
+    <div id="script-code">
+        <div id="script" class="inner">
+        </div>
+    </div>
+    <div id="console-code"></div>
+</div>
+
+<script src="../../ruddy-bower/ruddy.min.js"></script>
+<script src="../../../ruddy-ajax/ajax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+<script src="scripts/console.js"></script>
+<script id="code">
+    $r('#push').on('click', function (e, t) {
+        e.preventDefault();
+
+        $r({url: 'data/persons.json'}).ajax({
+            method: 'GET',
+            success: function(req, res) {
+                $r('#data').html('<pre>' + res + '</pre>');
+                $r('#data').style('opacity', 1);
+                console.log('JSON Loaded! URL:', req.responseURL);
+            },
+            error: function(req, res) {
+                console.log(res);
+            }
+        });
+    });
+</script>
+<script src="scripts/code.js"></script>
+</body>
+</html>

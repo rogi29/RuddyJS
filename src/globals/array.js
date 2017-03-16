@@ -51,13 +51,9 @@ $Export
                 if(__core.isArr(arr) === false)
                     throw new TypeError("Array type - argument provided is not an array type");
 
-                /**
-                 *
-                 * @type {{isEmpty: (exports|module.exports|module:$arr.isEmpty), join: (*|Function), push: (*|Function), pop: (*|Function), reverse: (*|Function), concat: (*|Function), forEach: (*|Function), map: (*|Function), reduce: (*|Function), indexOf: (*|Function), first: (exports|module.exports|module:$arr.first), last: (exports|module.exports|module:$arr.last)}}
-                 */
                 var prototype = {
                     /**
-                     * Checks if array is empty
+                     * Checks if an array is empty
                      *
                      * @function
                      * @inner
@@ -68,6 +64,31 @@ $Export
                      */
                     isEmpty: function() {
                         return (arr.length == 0);
+                    },
+
+                    /**
+                     * Get all keys of an array
+                     *
+                     * @function
+                     * @inner
+                     * @memberof module:$arr
+                     * @description Get all keys of an array
+                     *
+                     * @returns {Array}
+                     */
+                    keys: function() {
+                        "use strict";
+                        var r = [], i = 0;
+
+                        if(arr.isEmpty())
+                            return [];
+
+
+                        for(i; i < arr.length; i++) {
+                            r[i] = i;
+                        }
+
+                        return r;
                     },
 
                     /**

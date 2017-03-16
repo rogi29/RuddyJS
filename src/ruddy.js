@@ -12,8 +12,9 @@
          hooks = {
              export:            require('./core/export'),
              Element:           require('./core/window/element')(window, document),
-             CSSStyleSheet:     require('./core/window/style')(window, document),
+             NodeList:          require('./core/window/nodes')(window, document),
              HTMLAllCollection: require('./core/window/html')(window, document),
+             CSSStyleSheet:     require('./core/window/style')(window, document),
              Ruddy:  require('./core/core')(window, document),
              $arr:   require('./globals/array')(window, document),
              $str:   require('./globals/string')(window, document),

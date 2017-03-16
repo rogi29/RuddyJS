@@ -5,9 +5,11 @@
   "main": "src/ruddy.js",
   "scripts": {
     "bundle": "node bundle.js",
-    "minify": "uglifyjs ./build/ruddy.js -o ./ruddy-bower/ruddy.min.js",
-    "doc": "jsdoc -c jsdoc.json",
-    "test": "./node_modules/.bin/jasmine-node ./test"
+    "minify": "uglifyjs ./ruddy-bower/ruddy.js -o ./ruddy-bower/ruddy.min.js",
+    "remove": "echo y|rmdir docs /s",
+    "docs":   "jsdoc -c jsdoc.json",
+    "build":  "node build.js",
+    "test":   "./node_modules/.bin/jasmine-node ./test"
   },
   "keywords": [
     "npm",
@@ -19,9 +21,10 @@
   "authors": [
     "Gil Nimer <gil@ruddy.nl>"
   ],
-  "license": "ISC",
   "devDependencies": {
     "docdash": "^0.4.0",
-    "jasmine-node": "^1.14.5"
-  }
+    "jasmine-node": "^1.14.5",
+    "npm-run-all": "^4.0.2"
+  },
+  "license": "MIT"
 }

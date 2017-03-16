@@ -7,7 +7,7 @@
  * @author      Nick Vlug <info@ruddy.nl>
  * @copyright   RuddyJS licensed under MIT. Copyright (c) 2017 Ruddy Monkey & ruddy.nl
  *
- * @param       {String|Element|NodeList|Array} param With Ruddy DOM global wrapper you can manipulate Elements and Arrays with the `param` parameter
+ * @param       {String|Element|NodeList|Array} param With Ruddy DOM global wrapper you can manipulate Elements and Arrays with the `param` argument
  * @returns     {Object}
  *
  * @description
@@ -223,60 +223,73 @@ $Export
             }));
 
             /**
-             * Change/get css value
+             * Get/Set/Append innerHTML
              *
              * @method html
              * @memberof module:$r
              *
-             * @param style
              * @param value
              *
              * @returns {*}
              */
             $r.assign('html', $func (function(content) {
                 var el = this.el;
-                if(typeof content === 'undefined')
-                    return el.innerHTML;
 
-                return {
-                    inner: function () {
+                if(__core.isEl(el) === false)
+                    throw new TypeError("$r `this.el` is not an element");
+
+                if(content) {
+                    if (__core.isFunc(content))
+                        return el.innerHTML = content.call(el);
+
+                    return el.innerHTML = content;
+                }
+
+                return __core.assign(el.innerHTML, {
+                    append: function (content) {
                         if (__core.isFunc(content))
-                            return el.innerHTML = content.call(el);
-
-                        return el.innerHTML = content;
-                    },
-
-                    append: function () {
-                        if (__core.isFunc(content))
-                            return el.innerHTML += content.call(el);
+                            return (el.innerHTML += content.call(el));
 
                         return (el.innerHTML += content);
                     }
-                }
+                });
             }));
 
             /**
-             * Get/Set Attribute
+             * Get/Set/Append/Remove Attribute
              *
              * @method attribute
              * @memberof module:$r
              *
              * @param name
+             * @param value
              *
-             * @returns {*|string}
+             * @returns {*|String{append:*, remove:*}}
              */
             $r.assign('attribute', $func (function(name, value) {
-                if(__core.isEl(this.el) === false)
-                    throw new TypeError("$r argument provided is not an element");
+                var el = this.el, attr;
 
-                if(!value)
-                    return this.el.getAttribute(name);
+                if(__core.isEl(el) === false)
+                    throw new TypeError("$r `this.el` is not an element");
 
-                return this.el.setAttribute(name, value);
+                if(value)
+                    return el.setAttribute(name, value.toString());
+
+                attr = el.getAttribute(name);
+
+                return __core.assign(attr, {
+                    append: function (value) {
+                        return el.setAttribute(name, attr + value.toString());
+                    },
+
+                    remove: function() {
+                        return el.removeAttribute(name);
+                    }
+                });
             }));
 
             /**
-             * Get/Set Value
+             * Get/Set/Append Value
              *
              * @method value
              * @memberof module:$r
@@ -286,13 +299,59 @@ $Export
              * @returns {*|string}
              */
             $r.assign('value', $func (function(value) {
-                if(__core.isEl(this.el) === false)
-                    throw new TypeError("$r argument provided is not an element");
+                var el = this.el;
+
+                if(__core.isEl(el) === false)
+                    throw new TypeError("$r `this.el` is not an element");
 
                 if(value)
-                    return this.el.value = value;
+                    return el.value = value.toString();
 
-                return this.el.value;
+                return __core.assign(el.value, {
+                    append: function (value) {
+                        return (el.value += value);
+                    }
+                });
+            }));
+
+            /**
+             * Get/Set Id
+             *
+             * @method id
+             * @memberof module:$r
+             *
+             * @param id
+             *
+             * @returns {*|string}
+             */
+            $r.assign('id', $func (function(id) {
+                if(__core.isEl(this.el) === false)
+                    throw new TypeError("$r `this.el` is not an `Element` type");
+
+                if(id)
+                    return this.el.id = id.toString();
+
+                return this.el.id;
+            }));
+
+            /**
+             * Get/Set className
+             *
+             * @method class
+             * @memberof module:$r
+             *
+             * @param className
+             *
+             * @returns {*|string}
+             */
+            $r.assign('class', $func (function(className) {
+                if(__core.isEl(this.el) === false)
+                    throw new TypeError("$r `this.el` is not an `Element` type");
+
+                if(className)
+                    return this.el.className = className.toString();
+
+                return this.el.className;
             }));
 
             /**
@@ -351,142 +410,6 @@ $Export
             }));
 
             /**
-             * If statment
-             *
-             * @method when
-             * @memberof module:$r
-             * @param expression
-             *
-             * @returns {$r}
-             */
-            $r.assign('if', $func (function(expression, callback) {
-                this.total = 1;
-                this.count = 0;
-
-                if(expression) {
-                    this.count++;
-                }
-
-                if(this.count == this.total && callback) {
-                    callback.call(this, this.el);
-                }
-
-                return this;
-            }));
-
-
-            /**
-             * If statment
-             *
-             * @method when
-             * @memberof module:$r
-             * @param expression
-             *
-             * @returns {$r}
-             */
-            $r.assign('elseif', $func (function(expression, callback) {
-                if(this.count != 1) {
-                    if(expression) {
-                        this.count++;
-                        this.total = 0;
-                    }
-                }
-
-                this.total++;
-
-                if(this.count == this.total && callback) {
-                    callback.call(this, this.el);
-                }
-
-                return this;
-            }));
-
-
-            /**
-             * Execute else statment
-             *
-             * @method catch
-             * @memberof module:$r
-             * @param callback
-             *
-             * @returns {$r}
-             */
-            $r.assign('else', $func (function(callback) {
-                if(this.count != 1) {
-                    this.count++;
-                    this.total = 1;
-                    callback.call(this, this.el);
-                }
-
-                this.total++;
-                return this;
-            }));
-
-            /**
-             * If statment
-             *
-             * @method when
-             * @memberof module:$r
-             * @param expression
-             *
-             * @returns {$r}
-             */
-            $r.assign('when', $func (function(expression, callback) {
-                this.total = 1;
-                this.count = 0;
-
-                expression =
-                    (typeof expression == 'function') ? expression.call(this) : expression;
-
-                if(expression) {
-                    this.count++;
-                }
-
-                return this;
-            }));
-
-            /**
-             * Execute if statment
-             *
-             * @method do
-             * @memberof module:$r
-             * @param callback
-             *
-             * @returns {$r}
-             */
-            $r.assign('do', $func (function(callback) {
-                if(this.count == this.total) {
-                    callback.call(this, this.el);
-                }
-
-                return this;
-            }));
-
-            /**
-             * ELse if statment
-             *
-             * @method or
-             * @memberof module:$r
-             * @param expression
-             *
-             * @returns {$r}
-             */
-            $r.assign('or', $func (function(expression, callback) {
-                expression =
-                    (typeof expression == 'function') ? expression.call(this) : expression;
-
-                if(this.count != 1) {
-                    if(expression) {
-                        this.count++;
-                        this.total = 0;
-                    }
-                }
-
-                this.total++;
-                return this;
-            }));
-
-            /**
              * Event listener
              *
              * @method on
@@ -496,10 +419,10 @@ $Export
              * @returns {boolean}
              */
             $r.assign('on', $func (function(listener, callback, settings) {
-                var obj = this.el, target, calls = 0;
+                var self = this, obj = this.el, target, calls = 0;
 
                 if(listener in __core.events){
-                    obj.calls = __core.events[listener].call(this, obj, callback, settings);
+                    obj.calls = __core.events[listener].call(self, obj, callback, settings);
                     return;
                 }
 
@@ -508,7 +431,7 @@ $Export
                     target = e.target || e.srcElement;
 
                     calls++;
-                    callback.call(this, e, target, obj, calls);
+                    callback.call(self, e, target, obj, calls);
                 }, false);
             }));
 

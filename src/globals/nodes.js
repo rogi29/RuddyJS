@@ -24,12 +24,15 @@ $Export
         '../globals/nodes'
     )
     .include([
+        'NodeList',
         '@core'
     ])
     .init(
         this,
         module,
-        function (__core) {
+        function (NodeList, __core) {
+            "use strict";
+
             /**
              * Global NodeList Wrapper
              *
@@ -44,30 +47,66 @@ $Export
                 if(__core.isNodes(nodes) === false)
                     throw new TypeError("Nodes type - argument provided is not a nodeList type");
 
-                /**
-                 *
-                 * @type {{push: (exports|module.exports|module:$nodes.push), concat: (exports|module.exports|module:$nodes.concat), forEach: (*|Function), map: (exports|module.exports|module:$nodes.map), first: (exports|module.exports|module:$nodes.first), last: (exports|module.exports|module:$nodes.last), isOne: (exports|module.exports|module:$nodes.isOne), indexOf: (exports|module.exports|module:$nodes.indexOf)}}
-                 */
+
                 var prototype = {
                     /**
-                     * Native push function for a nodeList
+                     * Checks if a node list is empty
                      *
                      * @function
                      * @inner
                      * @memberof module:$nodes
-                     * @description Native push function for a nodeList
+                     * @description Checks if a node list is empty
                      *
-                     * @returns {Number}
+                     * @returns {boolean}
                      */
-                    push: function () {
-                        "use strict";
-                        var arg = arguments, l = arg.length, i = 0;
+                    isEmpty: function() {
+                        return (nodes.length == 0);
+                    },
 
-                        for(i; i !== l; i++) {
-                            nodes[nodes.length] = arg[i];
+                    /**
+                     * Get all keys of a node list
+                     *
+                     * @function
+                     * @inner
+                     * @memberof module:$nodes
+                     * @description Get all keys of a node list
+                     *
+                     * @returns {Array}
+                     */
+                    keys: function() {
+                        "use strict";
+                        var r = [], i = 0;
+
+                        if(nodes.isEmpty())
+                            return [];
+
+                        for(i; i < nodes.length; i++) {
+                            r[i] = i;
                         }
 
-                        return nodes.length;
+                        return r;
+                    },
+
+                    /**
+                     * Native indexOf function for a nodeList
+                     *
+                     * @function
+                     * @inner
+                     * @memberof module:$nodes
+                     * @description Native indexOf function for a nodeList
+                     * @param value
+                     *
+                     * @returns {*}
+                     */
+                    indexOf: function(value) {
+                        "use strict";
+                        var a = nodes, key;
+                        for (key in a) {
+                            if(value == a[key]) {
+                                return key;
+                            }
+                        }
+                        return -1;
                     },
 
                     /**
@@ -102,7 +141,7 @@ $Export
                      * @param f
                      * @param p
                      */
-                    forEach: (Array.prototype.forEach || function (f, p) {
+                    forEach: (NodeList.prototype.forEach || function (f, p) {
                         "use strict";
                         if (typeof f !== 'function')
                             throw new TypeError(f + ' is not a function');
@@ -112,31 +151,6 @@ $Export
                             f.call(p, a[i], i, a);
                         }
                     }),
-
-                    /**
-                     * Native map function for a nodeList
-                     *
-                     * @function
-                     * @inner
-                     * @memberof module:$nodes
-                     * @description Native map function for a nodeList
-                     *
-                     * @param f
-                     * @param p
-                     *
-                     * @returns {Array}
-                     */
-                    map: function (f, p) {
-                        "use strict";
-                        var t = nodes, a = [], i = 0, l = t.length, v;
-
-                        for(i; i != l; i++) {
-                            v = t[i];
-                            a[i] = p ? f.call(p, v, i, t) : f(v, i, t);
-                        }
-
-                        return a;
-                    },
 
                     /**
                      * Get first element
@@ -175,39 +189,24 @@ $Export
                     },
 
                     /**
-                     * Checks if a node list is empty
+                     * Convert to an array
                      *
                      * @function
                      * @inner
                      * @memberof module:$nodes
-                     * @description Checks if a node list is empty
+                     * @description Convert to an array
                      *
-                     * @returns {boolean}
+                     * @returns {Array}
                      */
-                    isEmpty: function() {
-                        return (nodes.length == 0);
-                    },
+                    toArray: function(){
+                        var a = [], i = 0;
 
-                    /**
-                     * Native indexOf function for a nodeList
-                     *
-                     * @function
-                     * @inner
-                     * @memberof module:$nodes
-                     * @description Native indexOf function for a nodeList
-                     * @param value
-                     *
-                     * @returns {*}
-                     */
-                    indexOf: function(value) {
-                        "use strict";
-                        var a = nodes, key;
-                        for (key in a) {
-                            if(value == a[key]) {
-                                return key;
-                            }
+                        for(i; i < nodes.length; i++) {
+                            a[i] = nodes[i];
                         }
-                        return -1;
+
+                        nodes = a;
+                        return nodes;
                     }
                 };
 

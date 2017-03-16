@@ -3,6 +3,7 @@
   "files": [
     "./src/core/export.js",
     "./src/core/window/element.js",
+    "./src/core/window/nodes.js",
     "./src/core/window/style.js",
     "./src/core/window/html.js",
     "./src/core/core.js",
