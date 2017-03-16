@@ -1,0 +1,100 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RuddyJS v0.0.3 - Examples - Scroll Extension</title>
+    <link type="text/css" rel="stylesheet" href="styles/stylesheet.css" />
+    <style id="style">
+
+        .rect {
+            width: 100%;
+            height: 260px;
+            background: #999;
+            transition: background 0.3s;
+        }
+    </style>
+</head>
+<body>
+<div id="examples">
+    <a href="https://ruddy.nl/ruddyjs" class="link">Return</a>
+    <a href="index.html" class="link">Example</a>
+    <a href="globals.html" class="link">Globals</a>
+    <a href="animation.html" class="link">Animation</a>
+    <a href="scroll.html" class="link">scroll</a>
+    <a href="ajax.html" class="link">Ajax</a>
+</div>
+<div id="headers">
+    <h3 id="header-example">Output</h3>
+    <h3 id="header-script">Code</h3>
+    <h3 id="header-console">Console</h3>
+</div>
+<div id="example-wrapper">
+    <div id="example-code">
+        <div class="inner">
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+            <div class="rect"></div>
+        </div>
+    </div>
+    <div id="script-code">
+        <div id="script" class="inner">
+        </div>
+    </div>
+    <div id="console-code"></div>
+</div>
+
+<script src="../../ruddy-bower/ruddy.min.js"></script>
+<script src="../../../ruddy-animation/animation.min.js"></script>
+<script src="../../../ruddy-scroll/scroll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+<script src="scripts/console.js"></script>
+<script id="code">
+    var inner = $r('#example-code .inner'),
+            handleScroll = function(){
+                var randColor   = Math.floor(Math.random() * 999999) + 100000,
+                        randEl      = Math.floor(Math.random() * 26) + 1 - 1;
+
+                $r ('.rect').el[randEl].style.background = '#' + randColor;
+            };
+
+    inner.on('scroll', function() {
+        window.requestAnimationFrame(handleScroll);
+    });
+
+    inner.scrollY(5000, {
+        duration: 3,
+        progress: 1,
+        delta: inner.setDelta('easeOut',{
+            name: 'backbow',
+            progress: 1
+        })
+    });
+</script>
+<script src="scripts/code.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RuddyJS v0.0.3 - Examples - Browser Environment</title>
+    <link type="text/css" rel="stylesheet" href="styles/stylesheet.css" />
+    <style>
+        #circle {
+            margin-top: 20px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #666;
+            background: none;
+        }
+    </style>
+</head>
+<body>
+<div id="examples">
+    <a href="https://ruddy.nl/ruddyjs" class="link">Return</a>
+    <a href="index.html" class="link">Example</a>
+    <a href="globals.html" class="link">Globals</a>
+    <a href="animation.html" class="link">Animation</a>
+    <a href="scroll.html" class="link">scroll</a>
+    <a href="ajax.html" class="link">Ajax</a>
+</div>
+<div id="headers">
+    <h3 id="header-example">Output</h3>
+    <h3 id="header-script">Code</h3>
+    <h3 id="header-console">Console</h3>
+</div>
+<div id="example-wrapper">
+    <div id="example-code">
+        <div class="inner">
+            RuddyJS v0.0.3 - HTML section
+            <div id="circle"></div>
+        </div>
+    </div>
+    <div id="script-code">
+        <div id="script" class="inner">
+        </div>
+    </div>
+    <div id="console-code"></div>
+</div>
+
+<script src="../../ruddy-bower/ruddy.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+<script src="scripts/console.js"></script>
+<script id="code">//Code Section
+
+    $r('#circle').on('click', function(e, t){
+        console.log('Console section');
+        this.style('background', '#aaaaaa');
+    });
+</script>
+<script src="scripts/code.js"></script>
+</body>
+</html>

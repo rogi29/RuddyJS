@@ -1,0 +1,30 @@
+{
+  "name": "ruddy",
+  "version": "0.0.3",
+  "description": "RuddyJS is a javascript library, and it's main purpose is to simplify and unify javascript. RuddyJS uses 'global wrappers' in order to make javascript more strict, type based and make it compatible with most browsers and platforms.",
+  "main": "src/ruddy.js",
+  "scripts": {
+    "bundle": "node bundle.js",
+    "minify": "uglifyjs ./ruddy-bower/ruddy.js -o ./ruddy-bower/ruddy.min.js",
+    "remove": "echo y|rmdir docs /s",
+    "docs":   "jsdoc -c jsdoc.json",
+    "build":  "node build.js",
+    "test":   "./node_modules/.bin/jasmine-node ./test"
+  },
+  "keywords": [
+    "npm",
+    "globals",
+    "compatibility",
+    "polyfill",
+    "dom"
+  ],
+  "authors": [
+    "Gil Nimer <gil@ruddy.nl>"
+  ],
+  "devDependencies": {
+    "docdash": "^0.4.0",
+    "jasmine-node": "^1.14.5",
+    "npm-run-all": "^4.0.2"
+  },
+  "license": "MIT"
+}

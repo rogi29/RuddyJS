@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RuddyJS v0.0.3 - Examples - Browser Environment</title>
+    <link type="text/css" rel="stylesheet" href="styles/stylesheet.css" />
+    <style>
+        .rect {
+            width: 50px;
+            height: 50px;
+            background: #999;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .circle{
+            width: 50px;
+            height: 50px;
+            background: none;
+            border: 1px solid #999;
+            border-radius: 50%;
+            margin: 50px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="examples">
+    <a href="https://ruddy.nl/ruddyjs" class="link">Return</a>
+    <a href="index.html" class="link">Example</a>
+    <a href="globals.html" class="link">Globals</a>
+    <a href="animation.html" class="link">Animation</a>
+    <a href="scroll.html" class="link">scroll</a>
+    <a href="ajax.html" class="link">Ajax</a>
+</div>
+<div id="headers">
+    <h3 id="header-example">Output</h3>
+    <h3 id="header-script">Code</h3>
+    <h3 id="header-console">Console</h3>
+</div>
+<div id="example-wrapper">
+    <div id="example-code">
+        <div class="inner">
+            <div id="element" class="rect"></div>
+            <div id="ruddyEl" class="rect"></div>
+        </div>
+    </div>
+    <div id="script-code">
+        <div id="script" class="inner">
+        </div>
+    </div>
+    <div id="console-code"></div>
+</div>
+
+<script src="../../ruddy-bower/ruddy.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+<script src="scripts/console.js"></script>
+<script id="code">
+    //////////////// Global wrappers /////////////////
+    console.log('Global Wrappers');
+
+    //////////////////////////////////////////////////
+    //Array wrapper
+    //////////////////////////////////////////////////
+    console.log('\n\nArray Wrapper');
+
+    var array = $arr([1,2,3]);
+    if(!array.isEmpty()) {
+        if(array.first() == 2) {
+            console.log('Correct, the first element of the array is equal to 2');
+        } else {
+            console.log('Wrong, the first element of the array doesn\'t equal to 2, it is eqaul to ' + array.first());
+        }
+    }
+
+    //////////////////////////////////////////////////
+    //Object wrapper
+    //////////////////////////////////////////////////
+    console.log('\n\nObject Wrapper');
+
+    var object = $obj({a: 1, b:2, c:3});
+    console.log($arr(object.keys()));
+    console.log($arr(object.values()));
+
+    object.forEach(function(value, key) {
+        console.log(value, key);
+    });
+
+    //////////////////////////////////////////////////
+    //NodeList wrapper
+    //////////////////////////////////////////////////
+    console.log('\n\nNodeList Wrapper');
+
+    var nodes = $nodes(document.querySelectorAll('.rect'));
+    console.log(nodes);
+    nodes.forEach(function(value, index) {
+        value.className = 'circle';
+    });
+    console.log(nodes);
+    var array = nodes.toArray();
+    console.log(array);
+
+    //////////////////////////////////////////////////
+    //Ruddy dom wrapper
+    //////////////////////////////////////////////////
+    console.log('\n\nRuddy DOM Wrapper');
+
+    console.log($r('#ruddyEl').position('x'), $r('#ruddyEl').size('width'));
+    $r('#ruddyEl').setTranslateX(150);
+    console.log($r('#ruddyEl').position('x'));
+
+    $r('#element').html('A').inner();
+</script>
+<script src="scripts/code.js"></script>
+</body>
+</html>
