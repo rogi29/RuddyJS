@@ -5,5 +5,6 @@ runAll(["bundle", "minify", "remove", "docs"], {parallel: false})
         console.log("done!");
     })
     .catch(function(err) {
+        console.log(err);
         console.log("failed!");
     });

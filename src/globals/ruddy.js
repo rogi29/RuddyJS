@@ -264,7 +264,7 @@ $Export
              * @param name
              * @param value
              *
-             * @returns {*|String{append:*, remove:*}}
+             * @returns {*|String}
              */
             $r.assign('attribute', $func (function(name, value) {
                 var el = this.el, attr;
