@@ -2,7 +2,7 @@
  * RuddyJS Window Properties - HTMLAllCollection
  *
  * @package     ruddy
- * @module      CSSStyleSheet
+ * @module      HTMLAllCollection
  * @author      Gil Nimer <info@ruddymonkey.com>
  * @author      Nick Vlug <info@ruddy.nl>
  * @copyright   RuddyJS licensed under MIT. Copyright (c) 2017 Ruddy Monkey & ruddy.nl
