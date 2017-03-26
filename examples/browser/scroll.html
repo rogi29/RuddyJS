@@ -74,13 +74,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
 <script src="scripts/console.js"></script>
 <script id="code">
-    var inner = $r('#example-code .inner'),
-            handleScroll = function(){
-                var randColor   = Math.floor(Math.random() * 999999) + 100000,
-                        randEl      = Math.floor(Math.random() * 26) + 1 - 1;
+    var inner = $r('#example-code .inner');
 
-                $r ('.rect').el[randEl].style.background = '#' + randColor;
-            };
+    function handleScroll () {
+        var randColor   = Math.floor(Math.random() * 999999) + 100000,
+            randEl      = Math.floor(Math.random() * 26) + 1 - 1;
+
+        $r ('.rect').el[randEl].style.background = '#' + randColor;
+    }
 
     inner.on('scroll', function() {
         window.requestAnimationFrame(handleScroll);

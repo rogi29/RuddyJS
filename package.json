@@ -7,9 +7,9 @@
     "bundle": "node bundle.js",
     "minify": "uglifyjs ./ruddy-bower/ruddy.js -o ./ruddy-bower/ruddy.min.js",
     "remove": "echo y|rmdir docs /s",
-    "docs":   "jsdoc -c jsdoc.json",
-    "build":  "node build.js",
-    "test":   "./node_modules/.bin/jasmine-node ./test"
+    "docs": "jsdoc -c jsdoc.json",
+    "build": "node build.js",
+    "test": "./node_modules/.bin/jasmine-node ./test"
   },
   "keywords": [
     "npm",
@@ -24,7 +24,9 @@
   "devDependencies": {
     "docdash": "^0.4.0",
     "jasmine-node": "^1.14.5",
-    "npm-run-all": "^4.0.2"
+    "npm-run-all": "^4.0.2",
+    "promise-tests": "^2.1.2",
+    "promises-aplus-tests": "^2.1.2"
   },
   "license": "MIT"
 }
