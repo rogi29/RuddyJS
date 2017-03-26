@@ -110,11 +110,11 @@ $Export
                  *
                  * @returns {*}
                  */
-                assignObj = Object.prototype.assign || function(target) {
+                assignObj = Object.assign || function(target) {
                     'use strict';
 
                     if (target === null)
-                        throw new TypeError('Cannot convert null or undefined to an object');
+                        throw new TypeError('Cannot convert undefined or null to an object');
 
                     target = Object(target);
                     for (var index = 1; index < arguments.length; index++) {
@@ -208,7 +208,7 @@ $Export
                  * @returns {Boolean}
                  */
                 isNumber = function(value) {
-                    return (typeof value == 'number');
+                    return (typeof value === 'number');
                 },
 
                 /**
@@ -290,9 +290,10 @@ $Export
                 isNodes = function(value) {
                     var stringRepr = Object.prototype.toString.call(value);
 
-                    return typeof value === 'object' &&
-                        (/^\[object (HTMLCollection|NodeList|Object)\]$/.test(stringRepr) &&
-                        (typeof value.length === 'number') || (value[0] && isElement(value[0]))) || (window.HTMLAllCollection && value instanceof HTMLAllCollection);
+                    return  'NodeList' in window && value instanceof window.NodeList ||
+                            typeof value === 'object' &&
+                            /^\[object (HTMLCollection|NodeList|Object)\]$/.test(stringRepr) &&
+                            isInt(value.length) && (value.length == 0 || (isElement(value[0]) && value[0].nodeType > 0));
                 },
 
                 /**

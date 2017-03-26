@@ -23,6 +23,6 @@ $Export
         this,
         module,
         function(window){
-            return window.HTMLAllCollection || {prototype: {}};
+            return window.HTMLAllCollection || function(){ return {prototype: {}}};
         }
     );

@@ -47,7 +47,6 @@ $Export
                 if(__core.isNodes(nodes) === false)
                     throw new TypeError("Nodes type - argument provided is not a nodeList type");
 
-
                 var prototype = {
                     /**
                      * Checks if a node list is empty

@@ -185,16 +185,18 @@ $Export
              * @returns {$r}
              */
             $r.assign('find', $func (function(selectors) {
-                var key = this.param + ':' + selectors, el = this.el;
+                var key = this.param + ':' + selectors, el = this.el, nodeList;
 
                 if($$rCache[key]) {
                     return $r (key);
                 }
 
-                el = $nodes ($el(el).querySelectorAll(selectors));
+
+                nodeList = $el(el).querySelectorAll(selectors);
+                el = $nodes (nodeList);
                 el = (el.length == 1) ? $el (el.first()) : el;
 
-                $$rCache[key] = {el: el, param: key, index: $nodes (doc.all).indexOf(el), rule: null};
+                $$rCache[key] = {el: el, param: key, index: $nodes (all).indexOf(el), rule: null};
 
                 return $r (key);
             }));
@@ -275,7 +277,7 @@ $Export
                 if(value)
                     return el.setAttribute(name, value.toString());
 
-                attr = el.getAttribute(name);
+                attr = el.getAttribute(name) || '';
 
                 return __core.assign(attr, {
                     append: function (value) {
