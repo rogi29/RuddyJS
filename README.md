@@ -1,3 +1,5 @@
+### RuddyJS is now deprecated, development moved to wrapjs https://github.com/RuddyMonkey/wrapjs.
+
 # RuddyJS
 ## Version 0.0.3 Documentation
 RuddyJS is a javascript library, and it's main purpose is to simplify and unify javascript.
